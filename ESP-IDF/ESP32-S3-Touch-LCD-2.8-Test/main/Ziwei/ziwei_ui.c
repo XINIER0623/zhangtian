@@ -1358,9 +1358,9 @@ static void create_chart_tab(lv_obj_t *parent)
     static const lv_coord_t col_dsc[] = {40, 40, 40, 40, LV_GRID_TEMPLATE_LAST};
     static const lv_coord_t row_dsc[] = {40, 40, 40, 40, LV_GRID_TEMPLATE_LAST};
     static const uint8_t ring_positions[ZIWEI_PALACE_COUNT][2] = {
-        {0, 0}, {1, 0}, {2, 0}, {3, 0},
-        {3, 1}, {3, 2}, {3, 3}, {2, 3},
-        {1, 3}, {0, 3}, {0, 2}, {0, 1}
+        {2, 3}, {1, 3}, {0, 3}, {0, 2},
+        {0, 1}, {0, 0}, {1, 0}, {2, 0},
+        {3, 0}, {3, 1}, {3, 2}, {3, 3}
     };
 
     lv_obj_t *page = lv_obj_create(parent);

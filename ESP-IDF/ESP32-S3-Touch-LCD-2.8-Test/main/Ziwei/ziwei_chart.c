@@ -300,7 +300,7 @@ static void assign_palace_roles(ziwei_chart_result_t *out)
     int role;
 
     for (role = 0; role < ZIWEI_PALACE_COUNT; ++role) {
-        out->palace_role_by_index[wrap_palace(out->ming_palace + role)] = role;
+        out->palace_role_by_index[wrap_palace(out->ming_palace - role)] = role;
     }
 }
 
@@ -647,8 +647,8 @@ static void build_extra_star_positions(const ziwei_chart_result_t *chart, int po
     positions[ZIWEI_EXTRA_YINSHA] = yinsha_by_month_mod[(month - 1) % 6];
     positions[ZIWEI_EXTRA_TIANKU] = wrap_palace(ZIWEI_BRANCH_WU - year_branch);
     positions[ZIWEI_EXTRA_TIANXU] = wrap_palace(ZIWEI_BRANCH_WU + year_branch);
-    positions[ZIWEI_EXTRA_TIANSHI] = wrap_palace(chart->ming_palace + ZIWEI_PALACE_ROLE_HEALTH);
-    positions[ZIWEI_EXTRA_TIANSHANG] = wrap_palace(chart->ming_palace + ZIWEI_PALACE_ROLE_FRIENDS);
+    positions[ZIWEI_EXTRA_TIANSHI] = wrap_palace(chart->ming_palace - ZIWEI_PALACE_ROLE_HEALTH);
+    positions[ZIWEI_EXTRA_TIANSHANG] = wrap_palace(chart->ming_palace - ZIWEI_PALACE_ROLE_FRIENDS);
     positions[ZIWEI_EXTRA_NIANJIE] = nianjie_by_year[year_branch];
     positions[ZIWEI_EXTRA_DAHAO_ADJ] = wrap_palace((int[]){ZIWEI_BRANCH_WEI, ZIWEI_BRANCH_WU, ZIWEI_BRANCH_YOU, ZIWEI_BRANCH_SHEN,
                                                           ZIWEI_BRANCH_HAI, ZIWEI_BRANCH_XU, ZIWEI_BRANCH_CHOU, ZIWEI_BRANCH_ZI,
